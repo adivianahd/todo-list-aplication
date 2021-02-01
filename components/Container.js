@@ -12,6 +12,8 @@ export default (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     backgroundColor: '#ccf',
     alignItems: 'center',
     justifyContent: 'center',
