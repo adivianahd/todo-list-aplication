@@ -235,3 +235,4 @@ const nameItems = [
 export default nameItems;
 
 // {nameItems.map((item, i)=> <Icon key={i} name={item.name} size={30} color="#000" />)}
+// <Icon.Button name="apple" backgroundColor="#3b5998" onPress={(e) => console.log('ksjdskadjkas', e)}>Login with Facebook</Icon.Button>
