@@ -1,21 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import Container from './components/Container';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Text from './components/Text';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Todo List en React Native</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Container>
+      <Text>holaaa
+        <Icon name="rocket" size={80} color="purple" />
+      </Text>
+    </Container>
+
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
