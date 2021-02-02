@@ -11,7 +11,7 @@ export default (props) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
     borderColor: '#000',
     borderRadius: 10,
     margin: 1,

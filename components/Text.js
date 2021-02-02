@@ -11,7 +11,7 @@ export default (props) => {
 
 const styles = StyleSheet.create({
   text: {
-    color: '#fff',
+    color: '#000',
     textAlign: 'center',
     fontSize: 35,
   },
