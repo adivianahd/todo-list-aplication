@@ -32,10 +32,10 @@ export default () => {
   }
 
   const options = [
-    { label: 'eliminadas', value: 'deleted' },
-    { label: 'por hacer', value: 'todo' },
-    { label: 'terminadas', value: 'done' },
-    { label: 'todas', value: 'all' }
+    { label: 'Deleted', value: 'deleted' },
+    { label: 'To do', value: 'todo' },
+    { label: 'Done', value: 'done' },
+    { label: 'All', value: 'all' }
   ];
 
   const filter = todo.filter(item => item.stateTodo === filterTodo || "all" === filterTodo)
@@ -48,11 +48,11 @@ export default () => {
       />
       <Input
         style={styles.input}
-        placeholder={'Nueva tarea'}
+        placeholder={'New to do'}
         actionButton={addTodo}
       />
       {todo.length === 0 ?
-        <Text style={styles.text}>Sin tareas!</Text>
+        <Text style={styles.text}>No homework for now!</Text>
         :
         <>
           <Switch 
