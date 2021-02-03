@@ -13,13 +13,13 @@ export default (props) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
-    borderColor: '#000',
+    backgroundColor: colors.white,
+    borderColor: colors.black,
     borderRadius: Unit(1),
     margin: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: "#000",
+    shadowColor: colors.black,
     shadowOpacity: 0.27,
     shadowRadius: 1.50,
     elevation: Unit(1),

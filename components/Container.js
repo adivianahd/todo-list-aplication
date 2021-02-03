@@ -27,7 +27,6 @@ export default () => {
         <Text style={styles.text}>Sin tareas!</Text>
         :
         <FlatList
-          style={styles.flatList}
           keyExtractor={(_, i)=> i}
           data={todo}
           renderItem={({ item }) => <List >{item}</List>}

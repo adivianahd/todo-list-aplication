@@ -11,7 +11,7 @@ export default ({
   actionButton
 }) => {
 
-  const [newTodo, setNewTodo] = useState();
+  const [newTodo, setNewTodo] = useState('');
 
   const alertAction = () => Alert.alert(
     'Alto!',
@@ -69,9 +69,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     borderRadius: Unit(1),
+    borderBottomWidth: 1,
+    borderBottomColor: colors.grey,
   },
   buttonInput: {
-    backgroundColor: colors.orange,
+    backgroundColor: colors.yellow,
     height: Unit(8),
     width: Unit(8)
   },

@@ -13,7 +13,7 @@ export default (props) => {
 
 const styles = StyleSheet.create({
   text: {
-    color: '#000',
+    color: colors.black,
     textAlign: 'center',
     fontSize: Unit(4),
   },

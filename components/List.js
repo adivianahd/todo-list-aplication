@@ -1,24 +1,24 @@
 import React from 'react';
-import { StyleSheet, Dimensions} from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { colors, Unit } from './utils';
 import Card from './Card';
 import Text from './Text';
 import Button from './Button';
 import Icon from './Icon';
 
-export default ({ children, style}) => {
+export default ({ children, style }) => {
   return (
     <Card style={[styles.cardList, style]}>
       <Text style={styles.text}>{children}</Text>
       <Button
         style={styles.buttonDone}
       >
-        <Icon color={colors.white} name={'check'} size={Unit(3)}/>
-      </Button>      
+        <Icon color={colors.white} name={'check'} size={Unit(3)} />
+      </Button>
       <Button
         style={styles.buttonDelete}
       >
-        <Icon color={colors.white} name={'remove'} size={Unit(3)}/>
+        <Icon color={colors.white} name={'remove'} size={Unit(3)} />
       </Button>
     </Card>
   );
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     padding: Unit(2),
     height: '100%',
     width: Dimensions.get('window').width - 50,
-    borderLeftColor: colors.orange,
+    borderColor: colors.yellow,
     borderLeftWidth: Unit(1)
   },
   text: {
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     height: Unit(8),
     width: Unit(8),
     margin: Unit(2)
-  },  
+  },
   buttonDelete: {
     flex: .30,
     backgroundColor: colors.red,
