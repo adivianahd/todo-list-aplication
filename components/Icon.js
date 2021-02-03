@@ -1,18 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { Text } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default (props) => {
+export default ({
+  color,
+  name,
+  size
+}) => {
   return (
-    <Text style={[styles.text, props.style]}>
-      {props.children}
+    <Text>
+      <Icon name={name} size={size} color={color} />
     </Text>
   );
 }
-
-const styles = StyleSheet.create({
-  text: {
-    color: '#000',
-    textAlign: 'center',
-    fontSize: 35,
-  },
-});

@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Unit } from './utils'
+
 
 export default ({
   style,
@@ -18,8 +20,7 @@ export default ({
 
 const styles = StyleSheet.create({
   myButton: {
-    borderRadius: 50,
-    margin: 1,
+    borderRadius: Unit(10),
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import Card from './Card';
-import Text from './Text';
+import { StyleSheet, View, FlatList, Image } from 'react-native';
+import { colors, Unit } from './utils'
 import Input from './Input';
+import Text from './Text';
+import List from './List';
 
 export default () => {
   const [todo, setTodo] = useState([]);
@@ -13,13 +14,25 @@ export default () => {
 
   return (
     <View style={styles.container}>
+      <Image
+      style={styles.image}
+      source={require('../assets/toDoImg.png')}
+      />
       <Input
+        style={styles.input}
         placeholder={'Nueva tarea'}
         actionButton={addTodo}
       />
-      <Card>
-        <Text>{todo}</Text>
-      </Card>
+      {todo.length === 0 ? 
+        <Text style={styles.text}>Sin tareas!</Text>
+        :
+        <FlatList
+          style={styles.flatList}
+          keyExtractor={(_, i)=> i}
+          data={todo}
+          renderItem={({ item }) => <List >{item}</List>}
+        />
+      }
     </View>
   );
 }
@@ -27,7 +40,17 @@ export default () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
+    paddingTop: Unit(20),
   },
+  image: {
+    height: Unit(30),
+    width: Unit(30)
+  },
+  text: {
+    color: colors.green
+  },
+
 });

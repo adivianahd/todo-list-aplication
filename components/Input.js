@@ -1,18 +1,35 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput } from 'react-native';
-import { colors } from './utils';
+import { StyleSheet, TextInput, Alert, Dimensions } from 'react-native';
+import { colors, Unit } from './utils'
 import Card from './Card';
 import Button from './Button';
-import Text from './Text';
+import Icon from './Icon';
 
 export default ({
+  style,
   placeholder,
   actionButton
 }) => {
 
-  const [newTodo, setNewTodo] = useState({});
+  const [newTodo, setNewTodo] = useState();
+
+  const alertAction = () => Alert.alert(
+    'Alto!',
+    'No puedes agregar una tarea vacia!',
+    [
+      {
+        text: 'aceptar',
+        onPress: ()=>{},
+        style: 'cancel'
+      }
+    ],
+    {cancelable: false}
+  )
 
   const onSubmit = () => {
+    if (!newTodo) {
+     return alertAction();
+    }
     actionButton(newTodo);
     setNewTodo('');
   };
@@ -22,10 +39,10 @@ export default ({
   };
 
   return (
-    <Card style={styles.inputContent}>
+    <Card style={[styles.inputContent, style]}>
       <TextInput
         value={newTodo}
-        style={[styles.input]}
+        style={styles.input}
         placeholder={placeholder}
         onChangeText={t => onChange(t)}
       />
@@ -33,7 +50,7 @@ export default ({
         style={styles.buttonInput}
         action={onSubmit}
       >
-        <Text style={styles.textButtonInput}>+</Text>
+        <Icon color={colors.white} name={'plus'} size={Unit(3)} />
       </Button>
     </Card>
   );
@@ -44,21 +61,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: 50,
-    width: '90%',
+    padding: Unit(2),
+    height: Unit(15),
+    width: Dimensions.get('window').width - 50,
   },
   input: {
     flex: 1,
     backgroundColor: '#fff',
-    borderRadius: 5,
-    padding: 9,
+    borderRadius: Unit(1),
   },
   buttonInput: {
     backgroundColor: colors.orange,
-    height: 40,
-    width: 40
-  },
-  textButtonInput: {
-    color: colors.white,
+    height: Unit(8),
+    width: Unit(8)
   },
 });

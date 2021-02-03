@@ -12,3 +12,5 @@ export const colors = {
   yellow: '#f2b90c',
   green: '#6ad959'
 };
+
+export const Unit = (n) => n*5;
