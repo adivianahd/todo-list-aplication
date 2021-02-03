@@ -1,22 +1,31 @@
 import React from 'react';
-import Container from './Container';
+import { StyleSheet, View, Dimensions } from 'react-native';
 import SwitchSelector from 'react-native-switch-selector';
 
 export default (props) => {
 
   return (
-    <Container>
+    <View style={styles.switch}>
       <SwitchSelector 
       options={props.options} 
       initial={1} 
-      onPress={() => console.log('esto trae el boton switch', props.options)}
-      selectedColor={props.colors.white} //color de letras seleccionado
-      buttonColor={props.colors.green} //color de boton del seleccionado
+      onPress={props.onPress}
+      selectedColor={props.colorTextSelected} 
+      buttonColor={props.colorButtonSelected}
+      borderColor={props.borderColor}
       animationDuration={250}
       hasPadding={true}
-      backgroundColor={props.colors.blanco}
+      borderRadius={5}
+      backgroundColor={props.colorBackground}
       />
-    </Container>
+    </View>
   );
 }
 
+const styles = StyleSheet.create({
+  switch: {
+    width: Dimensions.get('window').width - 50,
+    margin: 15,
+  }
+
+});

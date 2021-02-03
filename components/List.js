@@ -6,20 +6,44 @@ import Text from './Text';
 import Button from './Button';
 import Icon from './Icon';
 
-export default ({ children, style }) => {
+export default ({
+  children,
+  style,
+  data,
+  action
+}) => {
+  const onSubmit = () => {
+    action('done');
+  }
+
+  const toDelete = () => {
+    action('deleted')
+  }
+
+  const statusStyle = {
+    "done": styles.cardDone,
+    "deleted": styles.cardDeleted
+  }[data.stateTodo];
   return (
-    <Card style={[styles.cardList, style]}>
+
+    <Card style={[styles.cardList, style, statusStyle]}>
       <Text style={styles.text}>{children}</Text>
-      <Button
-        style={styles.buttonDone}
-      >
-        <Icon color={colors.white} name={'check'} size={Unit(3)} />
-      </Button>
-      <Button
-        style={styles.buttonDelete}
-      >
-        <Icon color={colors.white} name={'remove'} size={Unit(3)} />
-      </Button>
+      {data.stateTodo === "todo" &&
+        <>
+          <Button
+            style={styles.buttonDone}
+            action={onSubmit}
+          >
+            <Icon color={colors.white} name={'check'} size={Unit(3)} />
+          </Button>
+          <Button
+            style={styles.buttonDelete}
+            action={toDelete}
+          >
+            <Icon color={colors.white} name={'remove'} size={Unit(3)} />
+          </Button>
+        </>
+      }
     </Card>
   );
 }
@@ -35,6 +59,14 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width - 50,
     borderColor: colors.yellow,
     borderLeftWidth: Unit(1)
+  },
+  cardDone: {
+    minHeight: 80,
+    borderColor: colors.green,
+  },
+  cardDeleted: {
+    minHeight: 80,
+    borderColor: colors.red,
   },
   text: {
     flex: 2,

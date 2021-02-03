@@ -11,7 +11,7 @@ export default ({
   actionButton
 }) => {
 
-  const [newTodo, setNewTodo] = useState('');
+  const [newTodo, setNewTodo] = useState();
 
   const alertAction = () => Alert.alert(
     'Alto!',
