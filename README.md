@@ -13,4 +13,3 @@ You can run this!
 <img src="./assets/scanMe.png" alt="qr code"/>
 
 <a href="https://exp.host/@adivianahd/todo-list-app">Link here!</a>
-
