@@ -10,7 +10,7 @@ This is a sample calculator app built with React Native for sole purposes of lea
 
 - Apk to Android
 
-<img src="./assets/apkToAndroid.png" alt="qr code"/>
+<img src="./assets/" alt="qr code"/>
 
 - You can run this in expo! 
 
