@@ -8,9 +8,8 @@ When is empty
 All homeworks
 <img src="./assets/allTodoList.png" alt="screen all homework"/>
 
-Try me! 
+You can run this! 
 
-<img src="./assets/" alt="qr code"/>
+<img src="./assets/scanMe.png" alt="qr code"/>
 
-<a href="">Link here!</a>
-
+<a href="https://exp.host/@adivianahd/todo-list-app">Link here!</a>
