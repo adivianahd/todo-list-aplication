@@ -17,13 +17,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.adivianahd.todolistapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/toDoImg.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.adivianahd.todolistapp"
     },
     "web": {
       "favicon": "./assets/toDo.ico"
